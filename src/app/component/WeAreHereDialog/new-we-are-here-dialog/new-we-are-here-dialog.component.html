@@ -1,0 +1,44 @@
+<div>
+    <button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="modal_form">
+      <header>
+          <h1>Add</h1>
+      </header>
+      <form [formGroup]="newWeAreHereForm" (ngSubmit)="onSubmit()">
+
+          <ul>
+            <li>
+              <div class="form_group">
+                  <div class="label">
+                <label for="tittle">Title</label>
+              </div>
+                <input class="login-label" id="tittle" type="text" formControlName="title" placeholder="Title" (blur)="onTitleTouched()" >
+                <mat-icon matSuffix>person</mat-icon>
+                <span class="error-text" *ngIf="titleTouched && newWeAreHereForm.controls['title'].hasError('required')"> Title is Required</span>
+                
+              </div>
+            </li>
+
+            <li>
+              <div class="form_group">
+                  <div class="label">
+                <label for="tittle">Description</label>
+              </div>
+                <input class="login-label" id="description" type="text" formControlName="description" placeholder="Description" (blur)="onDescriptionTouched()"  >
+                <mat-icon matSuffix>drafts</mat-icon>
+                <span class="error-text" *ngIf="descriptionTouched && newWeAreHereForm.controls['description'].hasError('required')"> Description is Required</span>
+              </div>
+            </li>
+          </ul>  
+          <div class="actions-div">
+            <mat-dialog-actions align="end">
+            <button mat-raised-button matDialogClose color="warn">Cancel</button>
+            <button mat-raised-button color="primary">Save</button>
+            </mat-dialog-actions>
+          </div>   
+      </form>
+    </div>
+  </div>

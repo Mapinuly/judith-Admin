@@ -1,0 +1,19 @@
+
+<div class="delete-div">
+<button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+    <mat-icon>close</mat-icon>
+    </button>
+        <header>
+            <h1>Delete</h1>
+        </header>
+     <div class="d-flex justify-content-center">
+        <p>Are you sure you want to delete this detail? </p>
+     </div>
+     <div class="buttons-div d-flex justify-content-end">
+        <mat-dialog-actions align="end">
+            <button class="cancel-del"  matDialogClose >Cancel</button>
+            <button class="ms-2 confirm-del" (click)="data.confirmDelete(data.id)"   color="warn">Yes</button>
+        
+          </mat-dialog-actions>
+     </div>
+    

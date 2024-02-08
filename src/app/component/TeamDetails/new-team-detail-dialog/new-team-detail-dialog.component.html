@@ -1,0 +1,75 @@
+<div>
+    <button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="modal_form">
+      <header>
+          <h1>Add Team Detail</h1>
+      </header>
+      <form [formGroup]="newDetailForm" (ngSubmit)="onSubmit()">
+
+          <ul>
+            <li>
+              <div class="form_group">
+                <div class="label">
+                  <label for="tittle">Name</label>
+                </div>
+                <input class="login-label" id="tittle" type="text" formControlName="name" placeholder="Name" (blur)="onNameTouched()" >
+                <mat-icon matSuffix>person</mat-icon>
+                <span class="error-text" *ngIf="nameTouched && newDetailForm.controls['name'].hasError('required')"> Name is Required</span>
+                
+              </div>
+            </li>
+
+            <li>
+              <div class="form_group"> 
+                  <div class="label">
+                <label for="tittle">Designation</label>
+              </div>
+                <input class="login-label" id="tittle" type="text" formControlName="designation" placeholder="designation" (blur)="onDescriptionTouched()"  >
+                <mat-icon matSuffix>drafts</mat-icon>
+                <span class="error-text" *ngIf="descriptionTouched && newDetailForm.controls['designation'].hasError('required')"> Designation is Required</span>
+              </div>
+            </li>
+            
+            <li>
+              <div class="form_group">   <div class="label">
+                <label for="tittle">Bio</label>
+              </div>
+                <input class="login-label" id="tittle" type="text" formControlName="bio" placeholder="bio" (blur)="onPositionJobTouched()" >
+                <mat-icon matSuffix>save</mat-icon>
+                <span class="error-text" *ngIf="positionJobTouched && newDetailForm.controls['bio'].hasError('required')"> Bio is required</span>
+              </div>
+            </li>
+            <div class="form_group mt-3">
+              <div class="upload_files_wrap">
+                <label for="imageInput" class="custom-file-upload">
+                  <mat-label>Upload Image</mat-label>
+                </label>
+                <input
+                  formControlName="img"
+                  type="file"
+                  id="imageInput"
+                  (change)="onFileSelected($event)"
+                  accept="image/*"
+                  style="display: none;"
+                >
+                <div *ngIf="imageFile" class="selected-file-name">
+                  {{ imageFile.name }}
+                </div>
+              </div>
+            </div>
+          </ul>
+          <div class="actions-div">
+            <mat-dialog-actions align="end">
+              <button type="submit" mat-raised-button color="primary" [disabled]="isLoading">
+                <span *ngIf="!isLoading">Save</span>
+                
+              </button>
+              <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+            </mat-dialog-actions>
+          </div>      
+      </form>
+    </div>
+  </div>

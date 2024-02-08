@@ -1,0 +1,50 @@
+<div>
+    <button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="modal_form">
+      <header>
+          <h1>Add Synopsis</h1>
+      </header>
+      <form [formGroup]="newRowForm" (ngSubmit)="onSubmit()">
+
+          <ul>
+           <div class="TD">
+            <li>
+              <div class="form_group">
+                <div class="label">
+                  <label for="tittle">Title</label>
+                </div>
+                <input class="login-label" id="tittle" type="text" formControlName="title" placeholder="Tittle" (blur)="ontittleBlur()" >
+                <mat-icon matSuffix>person</mat-icon>
+                <span class="error-text" *ngIf="tittleTouched && newRowForm.controls['title'].hasError('required')"> Tittle is Required</span>
+              </div>
+            </li>
+           </div>
+            
+            <div class="LT">
+                <li>
+                    <div class="form_group">
+                      <div class="label">
+                        <label for="tittle">Description</label>
+                      </div>
+                      <input class="login-label" id="tittle" type="text" formControlName="description" placeholder="description" (blur)="ondesTouch()" >
+                      <mat-icon matSuffix>drafts</mat-icon>
+                      <span class="error-text" *ngIf="descriptionTouched && newRowForm.controls['description'].hasError('required')"> Description is Required</span>
+                    </div>
+                  </li>
+            </div>
+           
+          </ul>
+
+          <div class="actions-div">
+            <mat-dialog-actions align="end">
+            <button mat-raised-button matDialogClose color="warn">Cancel</button>
+            <button mat-raised-button  color="primary">Save</button>
+            <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+            </mat-dialog-actions>
+          </div>      
+      </form>
+    </div>
+  </div>

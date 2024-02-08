@@ -1,0 +1,140 @@
+<div class="main-div p-4">
+    <div class="head-div">
+        <h1 class="title">
+            List of Users
+        </h1>
+        <button mat-icon-button style="float:right;margin-right: 10px; margin-top: -10px;" matDialogClose>
+            <mat-icon>close</mat-icon>
+            </button>
+    </div>
+
+    <table class="listing mt-5">
+        <tr>
+          <td class="cols left">Event Name:</td>
+          <td class="cols-data right">{{data.eventname}}</td>
+        </tr>
+        <tr>
+            <td class="cols left">First Name :</td>
+            <td class="cols-data right">{{data.firstname}}</td>
+        </tr>
+        <tr>
+            <td class="cols left">Last Name :</td>
+            <td class="cols-data right">{{data.lastname}}</td>
+        </tr>
+        <tr>
+            <td class="cols left">Job Description :</td>
+            <td class="cols-data right">{{data.jobdescription}}</td>
+        </tr>
+        <tr>
+            <td class="cols left">Organization :</td>
+            <td class="cols-data right">{{data.organisation}}</td>
+        </tr>
+        <tr>
+            <td class="cols left">Phone number :</td>
+            <td class="cols-data right">{{data.phone1}}</td>
+        </tr>
+        <tr>
+        <tr>
+            <td class="cols left">Email :</td>
+            <td class="cols-data right">{{data.email}}</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+<!-- <button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+    <mat-icon>close</mat-icon>
+    </button>
+    <mat-dialog-content>
+        <header>
+            <h1>Edit</h1>
+        </header>
+
+        <div class="d-flex mt-5 ">
+            <div>
+              <div class="label">
+                <label for="tittle">First Name</label>
+              </div>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Placeholder" >
+                <mat-icon matSuffix>person</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="ms-3">
+              <div class="label">
+                <label for="tittle">Last Name</label>
+              </div>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Placeholder">
+                <mat-icon matSuffix>drafts</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="d-flex mt-3">
+            <div>
+            <div class="label">
+              <label for="tittle">Job Description</label>
+            </div>
+            <mat-form-field appearance="outline">
+              <input class="des-field" matInput placeholder="Placeholder">
+              <mat-icon matSuffix>save</mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="ms-3">
+            <div class="label">
+              <label for="tittle">Organization</label>
+            </div>
+            <mat-form-field appearance="outline">
+              <input class="des-field" matInput placeholder="Placeholder" [(ngModel)]="data.oragnization">
+              <mat-icon matSuffix>save</mat-icon>
+            </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="d-flex mt-3">
+            <div>
+            <div class="label">
+              <label for="tittle">Phone Number</label>
+            </div>
+            <mat-form-field appearance="outline">
+              <input class="des-field" matInput placeholder="Placeholder">
+              <mat-icon matSuffix>save</mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="ms-3">
+            <div class="label">
+              <label for="tittle">Second Phone Number</label>
+            </div>
+            <mat-form-field appearance="outline">
+              <input class="des-field" matInput placeholder="Placeholder">
+              <mat-icon matSuffix>save</mat-icon>
+            </mat-form-field>
+            </div>
+
+          </div>
+          <div class="d-flex mt-3">
+            <div>
+            <div class="label">
+              <label for="tittle">Email</label>
+            </div>
+            <mat-form-field appearance="outline">
+              <input class="des-field" matInput placeholder="Placeholder">
+              <mat-icon matSuffix>save</mat-icon>
+            </mat-form-field>
+          </div>
+         
+
+          </div>
+    </mat-dialog-content>
+    <div class="actions-div">
+      <mat-dialog-actions align="end">
+        <button mat-raised-button matDialogClose color="warn">Cancel</button>
+          <button  mat-raised-button color="primary">Save</button>
+      </mat-dialog-actions>
+    </div> -->

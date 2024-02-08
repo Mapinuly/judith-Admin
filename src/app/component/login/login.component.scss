@@ -1,0 +1,84 @@
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .mat-snack-bar-container {
+    background-color: #2196F3 !important; /* Blue background color */
+    color: #fff !important; /* White text color */
+  }
+  .error-text{
+    color: red;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 8px;
+  }
+  input.ng-invalid.ng-touched{
+   border: 1.5px solid red;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  .gogis-login-logo {
+    max-width: 190px;
+    width: 100%;
+}
+mat-form-field {
+  display: block;
+}
+input.login-label {
+  max-width: 346px;
+  margin: 0 auto;
+}
+.login-btn {
+  padding: 10px 30px;
+  color: #fff !important;
+  background: #26aae1;
+  margin-bottom: 15px;
+}
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: darkblue;
+}
+  

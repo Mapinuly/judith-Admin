@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "cards": [
+    {
+      "tittle": "Navigition SDK V2",
+      "description": "asdfg",
+      "link": "https://www.google.com/",
+      "id": 5
+    },
+    {
+      "tittle": "Navigition SDK V2",
+      "description": "Lorenm ipsum ",
+      "link": "https://www.google.com/",
+      "id": 6
+    },
+    {
+      "tittle": "Navigition SDK V2",
+      "description": "demo",
+      "link": "https://www.google.com/",
+      "id": 7
+    }
+  ]
+}

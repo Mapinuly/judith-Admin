@@ -1,0 +1,18 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" >
+      <img class="gogis-login-logo" src="https://www.gogis.co.il/assets/img/logo.png" alt="logo"> 
+           <div>
+            <input class="login-label" id="email" type="text" formControlName="email" placeholder="Enter Your Email" (blur)="onEmailBlur()">
+            <span class="error-text" *ngIf="emailTouched && loginForm.controls['email'].hasError('required')"> Email is Required</span>
+           </div>
+           
+         <div class="mt-4">
+          <input class="login-label" type="password" formControlName="password" placeholder="Enter Your Password" (blur)="onPasswordBlur()">
+          <span class="error-text" *ngIf=" passwordTouched && loginForm.controls['password'].hasError('required')"> Password is Required</span>
+         </div> 
+         <div>
+      
+      <button type="submit" [disabled]="!loginForm.valid"  class="login-btn mt-3">Log In</button>
+    </div>
+  </form>
+</div>  

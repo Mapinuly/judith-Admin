@@ -1,0 +1,84 @@
+<button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+  <mat-icon>close</mat-icon>
+</button>
+<div class="modal_form">
+  <header>
+    <h1>Edit Event</h1>
+  </header>
+</div>
+<div class="main">
+<form [formGroup]="editEventForm" (ngSubmit)="editData(data)">
+
+  <ul>
+    <div class="TD">
+      <li>
+        <div class="form_group">
+          <div class="label">
+            <label for="tittle">Title</label>
+          </div>
+          <input class="login-label" id="tittle" formControlName="title" type="text" placeholder="Tittle" [(ngModel)]="data.title">
+          <mat-icon matSuffix>person</mat-icon>
+        </div>
+      </li>
+
+      <li>
+        <div class="form_group">
+          <div class="label">
+            <label for="tittle">Description</label>
+          </div>
+          <input class="login-label" formControlName="description" type="text" placeholder="description"
+            [(ngModel)]="data.description">
+          <mat-icon matSuffix>drafts</mat-icon>
+        </div>
+      </li>
+    </div>
+
+    <div class="LT">
+      <div class="form_group mt-3">
+        <div class="upload_files_wrap">
+          <label for="imageInput" class="custom-file-upload">
+            <mat-label>Upload Image</mat-label>
+          </label>
+          <input formControlName="img" [(ngModel)]="data.img" type="file" id="imageInput"
+            (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+          <div *ngIf="imageFile" class="selected-file-name">
+            {{ imageFile.name }}
+          </div>
+          <div *ngIf="!imageFile" class="selected-file-name">
+            {{ editdata.img }}
+          </div>
+        </div>
+      </div>
+
+      <li>
+        <div class="form_group">
+          <div class="label">
+            <label class="date-lab" for="tittle"> Start Date</label>
+          </div>
+          <input class="login-label" formControlName="start_date" type="date" placeholder="date" [(ngModel)]="data.start_date">
+        </div>
+      </li>
+
+    </div>
+    <li class="mt-4">
+      <div class="form_group">
+        <div class="label">
+          <label class="date-lab" for="tittle"> End Date</label>
+        </div>
+        <input class="login-label" formControlName="end_date" type="date" placeholder="date" [(ngModel)]="data.end_date">
+      </div>
+    </li>
+
+
+  </ul>
+
+
+  <div class="actions-div">
+    <mat-dialog-actions align="end">
+      <button mat-raised-button matDialogClose color="warn" class="cancleBtn" (click)="cancleButon()">Cancel</button>
+      <button type="submit" mat-raised-button  color="primary">Save</button>
+      <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+    </mat-dialog-actions>
+  </div>
+</form>
+</div>

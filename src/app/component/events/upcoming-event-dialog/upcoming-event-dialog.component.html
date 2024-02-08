@@ -1,0 +1,94 @@
+<div>
+    <button mat-icon-button style="float:right;margin:6px;" matDialogClose>
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="modal_form">
+      <header>
+          <h1>Add New Event</h1>
+      </header>
+      <form [formGroup]="eventForm" (ngSubmit)="onSubmit()" >
+
+          <ul>
+           <div class="TD">
+            <li>
+              <div class="form_group">
+                <!-- <mat-label>Tittle</mat-label> -->
+                <div class="label">
+                  <label for="tittle">Title</label>
+                </div>
+                <input class="login-label" id="tittle" formControlName="title" type="text"  placeholder="Tittle" (blur)="ontittleBlur()"  >
+                <mat-icon matSuffix>person</mat-icon>
+                <span class="error-text" *ngIf="tittleTouched && eventForm.controls['title'].hasError('required')"> Tittle is Required</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="form_group">
+                <!-- <mat-label>Description</mat-label> -->
+                <div class="label">
+                  <label for="tittle">Description</label>
+                </div>
+                <input class="login-label" id="tittle" type="text" formControlName="description"  placeholder="description" (blur)="ondesTouch()"  >
+                <mat-icon matSuffix>drafts</mat-icon>
+                <span class="error-text" *ngIf="descriptionTouched && eventForm.controls['description'].hasError('required')"> Description is Required</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="form_group">
+                <div class="label">
+                  <label class="date-lab" for="tittle">End date</label>
+                </div>
+                <input class="login-label" id="tittle" formControlName="end_date" type="date" placeholder="date" (blur)="onDateTouch()" >
+                <span class="error-text" *ngIf="dateTouched && eventForm.controls['end_date'].hasError('required')"> Date is Required</span>
+              </div>
+            </li>
+
+
+           </div>
+           
+            <div class="LT">
+
+              <div class="form_group mt-3">
+                <div class="upload_files_wrap">
+                  <label for="imageInput" class="custom-file-upload">
+                    <mat-label>Upload Image</mat-label>
+                  </label>
+                  <input
+                  formControlName="img"
+                    type="file"
+                    id="imageInput"
+                    (change)="onFileSelected($event)"
+                    accept="image/*"
+                    style="display: none;"
+                  >
+                  <div *ngIf="imageFile"   class="selected-file-name">
+                    {{ imageFile.name }}
+                  </div>
+                </div>
+              </div>
+
+              <li>
+                <div class="form_group">
+                  <div class="label">
+                    <label class="date-lab" for="tittle"> Start Date</label>
+                  </div>
+                  <input class="login-label" id="tittle" formControlName="start_date" type="date" placeholder="date" (blur)="onDateTouch()" >
+                  <span class="error-text" *ngIf="dateTouched && eventForm.controls['start_date'].hasError('required')"> Date is Required</span>
+                </div>
+              </li>
+
+            </div>
+          </ul>
+
+          <div class="actions-div">
+            <mat-dialog-actions align="end">
+            <button mat-raised-button matDialogClose color="warn">Cancel</button>
+            <button mat-raised-button  color="primary">Save</button>
+            <mat-spinner diameter="24" *ngIf="isLoading"></mat-spinner>
+            </mat-dialog-actions>
+          </div>      
+      </form>
+    </div>
+  </div>

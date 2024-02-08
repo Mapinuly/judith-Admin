@@ -1,0 +1,27 @@
+
+  .navbar{
+height: 50px;
+margin-top: -13px;
+background-color: white !important;
+border-bottom: 1px solid #dadada;
+  }
+  .header {
+    font-size: 22px !important;
+    color: #6c4675 !important;
+}
+  .logout-btn{
+    border: none;
+    background-color: deepskyblue;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    &:hover{
+      background: rgb(56, 183, 225);
+      transition: 0.2s ease;
+    }
+  }
+ 
+
+  

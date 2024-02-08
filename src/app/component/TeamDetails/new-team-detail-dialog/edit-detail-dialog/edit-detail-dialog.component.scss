@@ -1,0 +1,23 @@
+.actions-div{
+    margin-top: 108px;
+}
+.custom-file-upload {
+    cursor: pointer;
+    background-color: #ededed;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  .selected-file-name{
+    margin-left: 10px;
+  }

@@ -1,0 +1,16 @@
+.main_dashb {
+    width: calc(100% - 200px);
+    float: right;
+    overflow: auto;
+    padding:20px;
+    box-sizing: border-box;
+}
+.text-head{
+    font-size: 28px;
+    margin-bottom: 12px !important;
+    font-family: sans-serif;
+    color: #6c4675;
+}
+.data-table{
+    margin-top: 21px;
+}

@@ -1,0 +1,5 @@
+<app-side-nav *ngIf="authService.isLoggedIn"></app-side-nav>
+<div class="main_dashb">
+  <app-header *ngIf="authService.isLoggedIn"></app-header>
+</div>
+<router-outlet></router-outlet>

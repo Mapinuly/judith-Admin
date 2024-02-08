@@ -1,0 +1,9 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.main_dashb {
+    width: calc(100% - 200px);
+    float: right;
+    overflow: auto;
+    padding:20px;
+    box-sizing: border-box;
+}
