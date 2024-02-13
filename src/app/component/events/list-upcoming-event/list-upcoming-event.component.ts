@@ -4,6 +4,8 @@ import { ViewListDialogComponent } from '../view-list-dialog/view-list-dialog.co
 import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/services/data.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-list-upcoming-event',
@@ -36,6 +38,15 @@ export class ListUpcomingEventComponent implements OnInit{
       height:'600px',
       data:rowData
     })
+  }
+  exportToPDF() {
+    const element = document.getElementById('data-table') as HTMLElement;
+
+    html2canvas(element).then((canvas) => {
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
+      pdf.save('table-export.pdf');
+    });
   }
   openEditUpcomingDialog(rowData:any){
    console.log('sdgcgc')
