@@ -6,19 +6,19 @@ export const AppConfig = {
 
     baseImgUrl:'https://www.gogis.co.il/',
     login: '/user/login',
-    
+
     cards: '/slider',
-    teamCards:'/team',
+    teamCards: '/team',
     contactUs: '/contact_us',
-    
-    weHere:'/we_are_here',
-    events:'/upcoming_events',
+
+    weHere: '/we_are_here',
+    events: '/upcoming_events',
 
     synopsis: '/synopsis',
 
-    deleteEventData:'/upcoming_events',
-    list:'/register_events' ,
-    createEvent:'/upcoming_events'   
+    deleteEventData: '/upcoming_events',
+    list: '/register_events',
+    createEvent: '/upcoming_events'
 }
 
 export const ConfigDetails = {
