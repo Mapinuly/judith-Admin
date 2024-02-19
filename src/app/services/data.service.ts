@@ -94,7 +94,6 @@ export class DataService {
   }
 
   addSynopsis(data: any) {
-    debugger
     return this.http.post(this.synopsis, data, this.getHeaders())
   }
 

@@ -34,23 +34,48 @@ export class EditDetailDialogComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.data._id,"teamedit")
   }
-  editTeamData(data:any){
-    this.isLoading=true
-    this.editTeamCard.editTeamCard(data).subscribe({
-      next: (val:any)=>{
+  editTeamData(data: any) {
+    this.isLoading = true;
+
+    const formData: FormData = new FormData();
+
+    formData.append('name', this.editForm.get('name')?.value);
+    formData.append('designation', this.editForm.get('designation')?.value);
+    formData.append('bio', this.editForm.get('bio')?.value);
+
+    if (this.imageFile) {
+      formData.append('image', this.imageFile, this.imageFile.name);
+    }
+    this.editTeamCard.editTeamCard(formData).subscribe({
+      next: (val: any) => {
         setTimeout(() => {
           this.isLoading = false;
         }, 2000);
-        this.dialogRef.close()
-        this.showSuccessSnackbar()
-
-        
+        this.dialogRef.close();
+        this.showSuccessSnackbar();
       },
-    })
+      error: (error: any) => {
+        console.error('Error occurred while editing team data:', error);
+ 
+        this.isLoading = false;
+      }
+    });
   }
+  // editTeamData(data:any){
+  //   this.isLoading=true
+  //   this.editTeamCard.editTeamCard(data).subscribe({
+  //     next: (val:any)=>{
+  //       setTimeout(() => {
+  //         this.isLoading = false;
+  //       }, 2000);
+  //       this.dialogRef.close()
+  //       this.showSuccessSnackbar()
+  //     },
+  //   })
+  // }
   showSuccessSnackbar() {
     this.snackBar.open('Data Edited successfully!', 'Close', {
-      duration: 3000, // Display for 3 seconds
+      duration: 3000,
     });
   }
 }

@@ -35,7 +35,7 @@ export class ContactUsComponent {
     this.dataService.getContactList().subscribe((res: any) => {
       if (res) {
         this.dataSource = new MatTableDataSource<Object[]>(res);
-        this.dataSource.paginator = this.paginator; // Set paginator after data is loaded
+        this.dataSource.paginator = this.paginator; 
       }
     });
   }
@@ -64,7 +64,7 @@ export class ContactUsComponent {
 
   showSuccessSnackbar() {
     this.snackBar.open('Deleted successfully!', 'Close', {
-      duration: 3000 // Display for 3 seconds
+      duration: 3000 
     });
   }
 }

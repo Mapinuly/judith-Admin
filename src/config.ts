@@ -1,7 +1,10 @@
 export const AppConfig = {
-    baseUrl: 'https://localhost:44343/api',
-    baseImg:'http://134.209.122.168/',
-    baseImgUrl:'https://http://localhost:4200/',
+    // baseUrl: 'https://localhost:44343/api',
+    // baseImg:'http://134.209.122.168/',
+    baseUrl: 'https://www.gogis.co.il/api',
+    baseImg: 'https://www.gogis.co.il/api',
+
+    baseImgUrl:'https://www.gogis.co.il/',
     login: '/user/login',
     
     cards: '/slider',

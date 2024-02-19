@@ -38,7 +38,6 @@ export class CreateSynopsisComponent implements OnInit {
   onSubmit(){
    if(this.newRowForm.valid){
     this.isLoading = true;
-    debugger
     this.cardData.addSynopsis(this.newRowForm.value).subscribe({
        next: (val:any)=>{
         setTimeout(() => {

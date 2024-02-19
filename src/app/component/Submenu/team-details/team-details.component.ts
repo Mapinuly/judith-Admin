@@ -60,7 +60,7 @@ export class TeamDetailsComponent implements OnInit {
     })
   }
   openEditDetailDialog(rowData:any){
-    console.log("open")
+    console.log("rowData" , rowData)
     this.matDialog.open(EditDetailDialogComponent,{
       data:rowData,
       width:'700px',
