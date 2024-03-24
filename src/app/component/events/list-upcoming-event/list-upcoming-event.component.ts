@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/services/data.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
+import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
 
 @Component({
   selector: 'app-list-upcoming-event',
@@ -14,20 +14,52 @@ import html2canvas from 'html2canvas';
 })
 
 export class ListUpcomingEventComponent implements OnInit{
-  displayedColumns: string[] = ['id', 'firstName','lastName','jobDescription','organization','phoneNumber','actions'];
-  dataSource = new MatTableDataSource<any>;
+
   constructor(private matDialog: MatDialog,private dataService:DataService){}
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  displayedColumns: string[] = ['id', 'firstName','lastName','jobDescription','organization','phoneNumber','actions'];
+  dataSource = new MatTableDataSource<any>;
+  exportData: any = [];
+  exportfields: any = [];
+  exportoptions = {
+    headers: [
+      "First Name",
+      "Last Name",
+      "Job Description",
+      "Organization",
+      "Phone Number 1",
+      "Phone Number 2",
+      "Email",
+    ],
+  };
+  fields: any;
+ 
   ngOnInit(): void {
     this.getList()
   }
   getList(){
     this.dataService.getListData().subscribe((res:any)=>{
       if(res){
-        this.dataSource=new MatTableDataSource<Object[]>(res);
+        this.dataSource = new MatTableDataSource<Object[]>(res);
         this.dataSource.paginator = this.paginator;
+        this.exportfields = [];
+
+        res.forEach((response: any) => {
+          this.fields = [];
+          this.fields.firstName = response.firstname;
+          this.fields.lastName = response.lastname;
+
+          this.fields.jobDescription = response.jobdescription;
+          this.fields.organization = response.organisation;
+          this.fields.phoneNumber1 = response.phone1;
+          this.fields.phoneNumber2 = response.phone2;
+          this.fields.email = response.email;
+
+          this.exportfields.push(this.fields);
+        });
+        
       }
     })
   }
@@ -39,14 +71,14 @@ export class ListUpcomingEventComponent implements OnInit{
       data:rowData
     })
   }
-  exportToPDF() {
-    const element = document.getElementById('data-table') as HTMLElement;
 
-    html2canvas(element).then((canvas) => {
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 210, 297);
-      pdf.save('table-export.pdf');
-    });
+  exportToCSV() {
+    var exportdate = new Date();
+    new AngularCsv(
+      this.exportfields,
+      "Registered-Users" + exportdate,
+      this.exportoptions
+    );
   }
   openEditUpcomingDialog(rowData:any){
    console.log('sdgcgc')
@@ -56,3 +88,5 @@ export class ListUpcomingEventComponent implements OnInit{
   }
 
 }
+
+

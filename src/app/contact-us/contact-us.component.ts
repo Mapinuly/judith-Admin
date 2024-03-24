@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class ContactUsComponent {
   dataSource = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['id', 'name', 'email', 'message', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'message', 'phone', 'Technology_of_interest', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -29,6 +29,10 @@ export class ContactUsComponent {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  prepareOptions(technologies: any): string {
+    return technologies.map((tech: { options: any; }) => tech.options).join(', ');
   }
 
   getConactList() {

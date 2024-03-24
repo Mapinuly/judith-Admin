@@ -1,14 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-
 import { AuthGuard } from './services/auth.guard';
 import { HomeComponent } from './component/home/home.component';
-import { ProfileComponent } from './component/profile/profile.component';
-import { AboutComponent } from './component/about/about.component';
-import { BlogsComponent } from './component/blogs/blogs.component';
-import { ContactComponent } from './component/contact/contact.component';
 import { TeamDetailsComponent } from './component/Submenu/team-details/team-details.component';
 import { WeAreHereComponent } from './component/Submenu/we-are-here/we-are-here.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
